@@ -96,8 +96,8 @@ function airprops(t, p, phi) {
     }
     result["Wet Bulb Temperature (&#8457)"] = bisectionmethod(Wzero, -148, 392); //Wet bulb temperature
     result["Absolute Humidity (lb/ft\u00B3)"] = phi*2.16679*6894.76*result["Sat Water Pressure (psia)"]/((t+459.67)/1.8)/16018; //Absolute humidity
-    result["Moisture (PPMv)"] = phi*result["Sat Water Pressure (psia)"]/(p - result["Sat Water Pressure (psia)"]) * 1e6;
-    result["Moisture (PPMm)"] = 18.01528*phi*result["Sat Water Pressure (psia)"]/(28.9647*(p - result["Sat Water Pressure (psia)"])) * 1e6;
+    result["Moisture (PPMv)"] = Math.Round(phi*result["Sat Water Pressure (psia)"]/(p - result["Sat Water Pressure (psia)"]) * 1e6);
+    result["Moisture (PPMm)"] = Math.Round(18.01528*phi*result["Sat Water Pressure (psia)"]/(28.9647*(p - result["Sat Water Pressure (psia)"])) * 1e6);
     return result;
 }
 function airprops2(t, p, tdp) {
