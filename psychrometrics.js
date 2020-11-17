@@ -82,7 +82,7 @@ function airprops(t, p, phi) {
     result["Humidity Ratio"] = bisectionmethod(phzero, 0, 1) * result["Sat Humidity Ratio"]; //Humidity ratio
     result["Water Partial Pressure (psia)"] = p / (1 + result["Humidity Ratio"] / 0.621945) * (result["Humidity Ratio"] / 0.621945); //Partial pressure of water in moist air
     result["Specific Volume (ft\u00B3/lb dry air)"] = v(t, p, result["Humidity Ratio"]); //Specific volume
-    result["Entallpy Btu/lb dry air"] = h(t, result["Humidity Ratio"]); //Enthalpy
+    result["Enthalpy Btu/lb dry air"] = h(t, result["Humidity Ratio"]); //Enthalpy
     result["Dew Point Temperature (&#8457)"] = td(t, result["Water Partial Pressure (psia)"]); //Dew point
     //Equation used to solve wet bulb temperature numerically
     function Wzero(twb) {
