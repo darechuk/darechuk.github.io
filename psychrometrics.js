@@ -95,6 +95,7 @@ function airprops(t, p, phi) {
         }
     }
     result["Wet Bulb Temperature (&#8457)"] = bisectionmethod(Wzero, -148, 392); //Wet bulb temperature
+    result["Water Content (ppm)"] = result["Sat Water Pressure (psia)"]; //Absolute humidity
     return result;
 }
 function airprops2(t, p, tdp) {
