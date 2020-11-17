@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="mathalgols.js"></script>
+    <script src="psychrometrics.js"></script>
+</head>
+<body>
+    <div id="PsychrometricDiv">
+        <h1>Psychrometric Calculator</h1>
+        <div>
+            <table id="inputs">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Inputs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Temperature (&#8457)</td>
+                        <td><input type="text" name="tempbox" id="tempbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Pressure (psia)</td>
+                        <td><input type="text" name="pressbox" id="pressbox" /></td>
+                    </tr>
+                    <tr>
+                        <td id="rhlabel">Relative Humdity (%)</td>
+                        <td><input type="text" name="rhbox" id="rhbox" /></td>
+                    </tr>
+                    <tr><td></td><th>Pick 3rd parameter</th></tr>
+                    <tr id="radios">
+                        <td><input type="radio" name="rtcheck" value="RH" checked="checked" onchange="getradiovalue(this)" />Relative Humidity</td>
+                        <td><input type="radio" name="rtcheck" value="TDP" onchange="getradiovalue(this)" />Dew Point Temperature</td>
+                        <td><input type="radio" name="rtcheck" value="TWB" onchange="getradiovalue(this)" />Wet Bulb Temperature</td>
+                    </tr>
+                    <tr>
+                        <th><input type="button" disabled name="calcbutton" id="calcbutton" value="Calculate" onclick="getresults()" /></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <thead id="reshead"></thead>
+                <tbody id="results"></tbody>
+            </table>
+        </div>
+        <div>
+            <input type="range" name="precislide" value="4" id="precislide" min="0" max="7" />
+        </div>
+    </div>
+    <div>
+        <h1>Testing...</h1>
+    </div>
+    <script src="eventscript.js"></script>
+</body>
+</html>
